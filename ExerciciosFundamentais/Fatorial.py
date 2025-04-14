@@ -7,4 +7,3 @@ while i >= 1:
     i = i - 1
 
 print(f'O fatorial de {n} é {fatorial}')
-print('tal')
