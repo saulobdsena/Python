@@ -1,1 +1,2 @@
-Este é meu repositorio exclusivo para Python, aqui guardo atividades, trabalhos e projetos pessoais.
+Este é meu repositório exclusivo para Python. Aqui, guardo atividades, trabalhos e projetos pessoais.
+
