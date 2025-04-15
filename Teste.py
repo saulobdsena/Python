@@ -1,7 +1,4 @@
-contador = 0
+lista = [1,2,3,4,'a','b','c']
 
-while contador < 5:
-    print(contador)
-    contador+=1
-else:
-    print('O contador foi encerrado')
+for x in range(11):
+    print(x)
