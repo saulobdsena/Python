@@ -47,13 +47,10 @@ janela = tk.Tk()
 frame = LabelFrame(janela, text='Qual você escolhe? ')
 frame.pack()
 
-iconePedra = PhotoImage(file='Python/Icones/rock.png')
-iconePapel = PhotoImage(file='Python/Icones/paper.png')
-iconeTesoura = PhotoImage(file='Python/Icones/scissor.png')
 
-Button(frame, text='Pedra', command=escolheuPedra, image=iconePedra, compound=tk.LEFT).grid(column=0, row=1)
-Button(frame, text='Papel',command=escolheuPapel, image= iconePapel, compound=tk.LEFT).grid(column=1, row=1)
-Button(frame, text='Tesoura',command=escolheuTesoura, image= iconeTesoura, compound=tk.LEFT).grid(column=2, row=1)
+Button(frame, text='Pedra', command=escolheuPedra).grid(column=0, row=1)
+Button(frame, text='Papel',command=escolheuPapel).grid(column=1, row=1)
+Button(frame, text='Tesoura',command=escolheuTesoura).grid(column=2, row=1)
 
 resultado = Label(frame, pady=10, padx=10, justify=tk.LEFT)
 resultado.grid(column = 0, row = 2, columnspan = 3)
