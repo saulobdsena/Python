@@ -1,4 +1,8 @@
-lista = [1,2,3,4,'a','b','c']
+def somar(*args):
+    soma = 0
+    
+    for elem in args:
+        soma+=elem
+    print(soma)
 
-for x in range(11):
-    print(x)
+somar(1,2,3,4)
