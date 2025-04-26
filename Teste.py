@@ -1,4 +1,9 @@
-lista = [1,2,3,4,'a','b','c']
+comida = 'arroz'
 
-for x in range(11):
-    print(x)
+def func():
+    global comida
+    comida = 'batata'
+    print(comida)
+
+func()
+print(comida)
