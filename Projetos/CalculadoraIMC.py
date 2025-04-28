@@ -3,11 +3,18 @@ from tkinter import Label, Frame, Entry, Button
 
 def calculaImc():
     try:
-        IMC = float(peso.get())/float(altura.get()) ** 2
-
-        resultado['text'] = f'Seu IMC é de {IMC:.2f}'
+        pesoValor = float(peso.get())
     except ValueError:
-        resultado['text'] = f'Os valores estao errados'
+        resultado['text'] = 'Erro: Peso inválido'
+        return
+    try:
+        alturaValor = float(altura.get())
+    except ValueError:
+        resultado['text'] = 'Erro: Altura inválida'
+        return
+    IMC = pesoValor / (alturaValor ** 2)
+    resultado['text'] = f'Seu IMC é de {IMC:.2f}'
+
 
 janela = tk.Tk() 
 
@@ -28,5 +35,5 @@ Button(frame, text='Calcular', command= calculaImc).grid(column=2, row = 4)
 resultado = Label(frame)
 resultado.grid(column=1, row = 5, columnspan=2)
 
-janela.title('Caladora de IMC')
+janela.title('Calculadora de IMC')
 janela.mainloop()
