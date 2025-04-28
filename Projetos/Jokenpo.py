@@ -39,9 +39,6 @@ def jokenpo(escolhaUsuario):
     resultado.config(text=mensagem)
 
 
-
-
-
 janela = tk.Tk()
 
 frame = LabelFrame(janela, text='Qual você escolhe? ')
