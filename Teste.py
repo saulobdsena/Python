@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 data = input('Qual a sua data de nascimento? ')  # exemplo: 28/04/2000
 dia, mes, ano = data.split('/')
 
@@ -20,3 +21,6 @@ dicionario = {
 }
 
 print(f'{dia} de {dicionario.get(mes)} de {ano}')
+=======
+print('oi')
+>>>>>>> cce494524a57167ef62408106e48d66c55801ead
