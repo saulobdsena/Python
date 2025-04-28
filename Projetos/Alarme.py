@@ -3,6 +3,15 @@ from tkinter import Label, Frame
 import datetime
 import time
 import threading
+import pygame
+
+def tocar_alarme():
+    pygame.mixer.init()
+    pygame.mixer.music.load('/home/saulobdsena/GitHub/Python/Projetos/Sounds/somDespertador.mp3')
+    pygame.mixer.music.play()
+    while pygame.mixer.music.get_busy():
+        time.sleep(1)
+
 from playsound import playsound
 
 def alarme():
@@ -12,6 +21,8 @@ def alarme():
         horaLocal = datetime.datetime.now().strftime('%H:%M:%S')
         print(horaLocal, setTempoAlarme)
         if horaLocal == setTempoAlarme:
+
+            threading.Thread(target=tocar_alarme).start()
             playsound(r'C:\Users\saulo\Documents\GitHub\Python\Projetos\Sounds\somDespertador.mp3')
             break
 
