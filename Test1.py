@@ -1,9 +1,8 @@
-class Main(object):
-    numero = 123
+class Cachorro(object):
 
-    def somar(self):
-        return +1
-    
-x = Main
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
 
-print(x.somar("s"))
+domi = Cachorro('Dominique', 10)
+print(domi.idade)
