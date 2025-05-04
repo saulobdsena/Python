@@ -1,7 +1,9 @@
-import csv
-with open('file.csv','w') as file:
-    writer = csv.writer(file)
+class Main(object):
+    numero = 123
 
-    writer.writerow(['Luciano','Maria','Carlos'])
-    writer.writerow(['Maria', 'Ana'])
-    writer.writerow(['Joao', 'Roberto'])
+    def somar(self):
+        return +1
+    
+x = Main
+
+print(x.somar("s"))

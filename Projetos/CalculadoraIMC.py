@@ -5,12 +5,12 @@ def calculaImc():
     try:
         pesoValor = float(peso.get())
     except ValueError:
-        resultado['text'] = 'Erro: Peso inválido'
+        resultado['text'] = 'peso inválido'
         return
     try:
         alturaValor = float(altura.get())
     except ValueError:
-        resultado['text'] = 'Erro: Altura inválida'
+        resultado['text'] = 'altura inválida'
         return
     IMC = pesoValor / (alturaValor ** 2)
     resultado['text'] = f'Seu IMC é de {IMC:.2f}'
