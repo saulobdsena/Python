@@ -1,4 +1,7 @@
-import json
+import csv
+with open('file.csv','w') as file:
+    writer = csv.writer(file)
 
-with open('file.json','w') as file:
-    dicionario = json.load()
+    writer.writerow(['Luciano','Maria','Carlos'])
+    writer.writerow(['Maria', 'Ana'])
+    writer.writerow(['Joao', 'Roberto'])
