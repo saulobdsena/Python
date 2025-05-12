@@ -26,16 +26,20 @@ class Circulo():
     def calcular_area(self):
         print(f'a area do circulo é {(math.pi * (self.raio ** 2)):.2f}')
 
+def main():
 
-circulo = Circulo(5)
+    circulo = Circulo(5)
 
-retangulo = Retangulo(2, 4)
+    retangulo = Retangulo(2, 4)
 
 
-retangulo.calcular_area()
+    retangulo.calcular_area()
 
-retangulo.verificar()
+    retangulo.verificar()
 
-circulo.calcular_area()
+    circulo.calcular_area()
 
-circulo.calcular_perimetro()
+    circulo.calcular_perimetro()
+
+if __name__ == "__main__":
+    main()
