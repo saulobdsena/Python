@@ -15,12 +15,12 @@ def tocar_alarme():
 from playsound import playsound
 
 def alarme():
-    setTempoAlarme = f'{hora.get()}:{minutos.get()}:{segundo.get()}'
+    set_tempo_alarme = f'{hora.get()}:{minutos.get()}:{segundo.get()}'
     while True:
         time.sleep(1)
         horaLocal = datetime.datetime.now().strftime('%H:%M:%S')
-        print(horaLocal, setTempoAlarme)
-        if horaLocal == setTempoAlarme:
+        print(horaLocal, set_tempo_alarme)
+        if horaLocal == set_tempo_alarme:
 
             threading.Thread(target=tocar_alarme).start()
             playsound(r'C:\Users\saulo\Documents\GitHub\Python\Projetos\Sounds\somDespertador.mp3')

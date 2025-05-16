@@ -2,13 +2,13 @@ import tkinter as tk
 from tkinter import LabelFrame, Button, Label, PhotoImage
 import random
 
-def escolheuPedra():
+def escolheu_pedra():
     jokenpo(escolhaUsuario='Pedra')
 
-def escolheuPapel():
+def escolheu_papel():
     jokenpo(escolhaUsuario='Papel')
 
-def escolheuTesoura():
+def escolheu_tesoura():
     jokenpo(escolhaUsuario='Tesoura')
 
 
@@ -45,9 +45,9 @@ frame = LabelFrame(janela, text='Qual você escolhe? ')
 frame.pack()
 
 
-Button(frame, text='Pedra', command=escolheuPedra).grid(column=0, row=1)
-Button(frame, text='Papel',command=escolheuPapel).grid(column=1, row=1)
-Button(frame, text='Tesoura',command=escolheuTesoura).grid(column=2, row=1)
+Button(frame, text='Pedra', command=escolheu_pedra).grid(column=0, row=1)
+Button(frame, text='Papel',command=escolheu_papel).grid(column=1, row=1)
+Button(frame, text='Tesoura',command=escolheu_tesoura).grid(column=2, row=1)
 
 resultado = Label(frame, pady=10, padx=10, justify=tk.LEFT)
 resultado.grid(column = 0, row = 2, columnspan = 3)

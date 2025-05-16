@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import Label, Frame, Entry, Button
 
-def calculaImc():
+def calcular_imc():
     try:
         pesoValor = float(peso.get())
     except ValueError:
@@ -30,7 +30,7 @@ peso.grid(column=2, row = 2)
 altura = Entry(frame)
 altura.grid(column=2,row = 3)
 
-Button(frame, text='Calcular', command= calculaImc).grid(column=2, row = 4)
+Button(frame, text='Calcular', command= calcular_imc).grid(column=2, row = 4)
 
 resultado = Label(frame)
 resultado.grid(column=1, row = 5, columnspan=2)
