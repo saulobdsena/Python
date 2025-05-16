@@ -6,20 +6,20 @@ def main(page: ft.Page):
 
     numero = ft.TextField(value='0',text_align=ft.TextAlign.CENTER,width=100)
 
-    def clicarMenos(e):
+    def clicar_menos(e):
         numero.value = str(int(numero.value) - 1)
         numero.update()        
     
-    def clicarMais(e):
+    def clicar_mais(e):
         numero.value = str(int(numero.value) + 1)
         numero.update() 
 
     page.add(
         ft.Row(
             controls=[
-                ft.IconButton(icon=ft.icons.REMOVE,on_click=clicarMenos),
+                ft.IconButton(icon=ft.icons.REMOVE,on_click=clicar_menos),
                 numero,
-                ft.IconButton(icon= ft.icons.ADD, on_click=clicarMais)
+                ft.IconButton(icon= ft.icons.ADD, on_click=clicar_mais)
             ],
             alignment=ft.MainAxisAlignment.CENTER,
 
