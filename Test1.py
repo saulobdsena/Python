@@ -32,7 +32,6 @@ class Secadora(Maquina):
         return self.get_minimo() <= quantidade <= self.get_maximo()
 
 
-# Entrada de dados
 quantidade = int(input())
 
 lineL = input().split()
@@ -44,11 +43,9 @@ maxL = int(lineL[1])
 minS = int(lineS[0])
 maxS = int(lineS[1])
 
-# Instanciando os objetos
 lavadora = Lavadora(minL, maxL)
 secadora = Secadora(minS, maxS)
 
-# Verificação e saída
 if lavadora.verificarLavar(quantidade) and secadora.verificarSecar(quantidade):
     print('possivel')
 else:
