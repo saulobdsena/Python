@@ -2,15 +2,12 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 
-# ---------- Linked list node ----------
 class Node:
     def __init__(self, value, nxt=None):
         self.value = value
         self.next = nxt
 
-# ---------- Helper to add to linked list ----------
 def add_neighbor(head, value):
-    # insert at head (fast). You could also insert at tail if you prefer.
     return Node(value, head)
 
 def find_degree(uf_name):
@@ -41,14 +38,12 @@ def lower_degree_neighbors(adj):
             uf_min = uf
     return uf_min, min_degree
 
-# ---------- States order (UF codes) ----------
 states = [
     "AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS",
     "MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC",
     "SP","SE","TO"
 ]
 
-# Your neighbor dictionary (unchanged)
 estados_vizinhos = {
     "AC": {"AM","RO"},
     "AL": {"BA","PE","SE"},
@@ -79,18 +74,14 @@ estados_vizinhos = {
     "TO": {"PA","MA","PI","BA","GO","MT"},
 }
 
-# ---------- Build adjacency "linked lists" ----------
-# adj[UF] -> head of linked list of neighbors
 adj = {uf: None for uf in states}
 
-# Build from the dict
 for uf, neighs in estados_vizinhos.items():
     head = None
     for v in neighs:
         head = add_neighbor(head, v)
     adj[uf] = head
 
-# (Optional) print each UF neighbors by walking the linked list
 def iter_list(head):
     cur = head
     while cur:
@@ -100,7 +91,6 @@ def iter_list(head):
 for uf in states:
     print(f"{uf} tem como vizinhos: {', '.join(iter_list(adj[uf]))}")
 
-# ---------- Build adjacency matrix ----------
 index = {uf: i for i, uf in enumerate(states)}
 n = len(states)
 matriz = [[0]*n for _ in range(n)]
@@ -112,16 +102,14 @@ for uf in states:
         v = cur.value
         j = index[v]
         matriz[i][j] = 1
-        matriz[j][i] = 1  # undirected: mirror it
+        matriz[j][i] = 1  
         cur = cur.next
 
-# ---------- Print matrix nicely ----------
 print("\nMatriz de Adjacência (0/1):")
 print("    " + " ".join(f"{s:>2}" for s in states))
 for i, uf in enumerate(states):
     print(f"{uf:>2}  " + " ".join(str(matriz[i][j]).rjust(2) for j in range(n)))
 
-#---------- Find UF with highest degree ----------
 print(f"Escolha o UF para calcular o grau: ")
 print(f"Grau do UF: {find_degree(input().strip().upper())}")
 
