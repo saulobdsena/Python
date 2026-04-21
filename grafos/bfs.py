@@ -14,25 +14,48 @@ grafo_cidades = {
     "Porto Alegre": ["Curitiba"]
 }
 
+
 def bfs(graph, s):
 
-    color = ["White", "Gray", "Black"]
-    distance = []
-    no_pai = []
+    color = {}
+    distance = {}
+    no_pai = {}
 
-    if u == s:
-        color[u] = "Gray"
-        distance = 0
-        no_pai = None
+    for u in graph:
+        color[u] = "White"
+        distance[u] = float('inf')
+        no_pai[u] = None
 
-    if u != s:
-        for u in (u != s):
-            color[u] = "White"
-            no_pai = None
+    color[s] = "Gray"
+    distance[s] = 0
+    no_pai[s] = None
 
     fila = []
+    fila.append(s)
 
     while len(fila) != 0:
+        
+        u = fila.pop(0)
+
+        for vizinho in graph[u]:
+            if color[vizinho] == "White":
+                color[vizinho] = "Gray"
+                distance[vizinho] = distance[u] + 1
+                no_pai[vizinho] = u
+                fila.append(vizinho)
+        
+        color[u] = "Black"
+    
+    return color, distance, no_pai
+ 
+
+color, distance, no_pai = bfs(grafo_cidades, "BH")
+print(color)
+print(distance)
+print(no_pai)
+    
+    
+
         
 
         
