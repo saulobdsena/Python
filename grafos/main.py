@@ -40,7 +40,7 @@ def lower_degree_neighbors(adj):
 
 states = [
     "AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS",
-    "MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC",
+    "'MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC",
     "SP","SE","TO"
 ]
 
@@ -130,3 +130,5 @@ plt.figure(figsize=(12, 8))
 nx.draw(G, with_labels=True, node_color='lightblue', edge_color='gray', node_size=500)
 plt.title("Grafo dos Estados Brasileiros")
 plt.show()
+
+
