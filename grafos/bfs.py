@@ -11,7 +11,8 @@ grafo_cidades = {
     "SP": ["BH", "Brasília", "RJ", "Curitiba", "Goiânia"],
     "Goiânia": ["Brasília", "SP", "Curitiba"],
     "Curitiba": ["SP", "Goiânia", "Porto Alegre"],
-    "Porto Alegre": ["Curitiba"]
+    "Porto Alegre": ["Curitiba"],
+    "Floripa" : []
 }
 
 
@@ -58,10 +59,16 @@ def reconstruir_caminho(no_pai, destino):
     caminho.reverse()
     return caminho , len(caminho)
      
-color, distance, no_pai = bfs(grafo_cidades, "Recife")
-caminho, tamanho = reconstruir_caminho(no_pai, "Manaus")
+color, distance, no_pai = bfs(grafo_cidades, "Fortaleza")
+caminho, tamanho = reconstruir_caminho(no_pai, "Floripa")
+
 print(color)
-print(distance)
+
+if distance["Porto Alegre"] == float('inf'):
+    print("Essa rota não existe")
+else :
+    print(distance)
+
 print(no_pai)
 print(caminho)
 print(tamanho - 1)    
