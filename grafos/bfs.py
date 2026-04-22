@@ -49,11 +49,23 @@ def bfs(graph, s):
     return color, distance, no_pai
  
 
-color, distance, no_pai = bfs(grafo_cidades, "BH")
+def reconstruir_caminho(no_pai, destino):
+    caminho = []
+    atual = destino
+    while atual != None:
+        caminho.append(atual)
+        atual = no_pai[atual]
+    caminho.reverse()
+    return caminho , len(caminho)
+     
+color, distance, no_pai = bfs(grafo_cidades, "Recife")
+caminho, tamanho = reconstruir_caminho(no_pai, "Manaus")
 print(color)
 print(distance)
 print(no_pai)
-    
+print(caminho)
+print(tamanho - 1)    
+
     
 
         
