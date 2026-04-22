@@ -64,7 +64,7 @@ caminho, tamanho = reconstruir_caminho(no_pai, "Floripa")
 
 print(color)
 
-if distance["Porto Alegre"] == float('inf'):
+if distance["Floripa"] == float('inf'):
     print("Essa rota não existe")
 else :
     print(distance)
