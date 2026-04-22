@@ -60,7 +60,7 @@ def reconstruir_caminho(no_pai, destino):
     return caminho , len(caminho)
      
 color, distance, no_pai = bfs(grafo_cidades, "Fortaleza")
-caminho, tamanho = reconstruir_caminho(no_pai, "Floripa")
+caminho, tamanho = reconstruir_caminho(no_pai, "BH")
 
 print(color)
 
